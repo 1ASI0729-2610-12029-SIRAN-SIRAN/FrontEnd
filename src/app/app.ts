@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {LoginForm} from './iam/presentation/components/login-form/login-form';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',

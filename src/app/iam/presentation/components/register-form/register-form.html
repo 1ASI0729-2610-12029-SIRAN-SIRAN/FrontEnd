@@ -1,0 +1,82 @@
+<div class="register-container">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-form">
+    <!--TODO: TRANSLATE LATER-->
+    <h2>Register</h2>
+
+    <div class="form-group">
+      <!--TODO: TRANSLATE LATER-->
+      <label for="email">Email Address</label>
+      <input type="email" id="email" formControlName="email" class="form-control" [class.is-invalid]="email?.invalid && email?.touched">
+      <div class="invalid-feedback" *ngIf="email?.invalid && email?.touched">
+        <!--TODO: TRANSLATE LATER-->
+        <span *ngIf="email?.errors?.['required']">Email Address is required</span>
+        <span *ngIf="email?.errors?.['email']">Email Address format is invalid</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <!--TODO: TRANSLATE LATER-->
+      <label for="name">Full Name</label>
+      <input type="text" id="name"
+             formControlName="name" class="form-control"
+             [class.is-invalid]="name?.invalid && name?.touched"
+      />
+      <!--TODO: TRANSLATE LATER-->
+      <div class="invalid-feedback" *ngIf="name?.invalid && name?.touched">Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <!--TODO: TRANSLATE LATER-->
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" class="form-control" [class.is-invalid]="password?.invalid && password?.touched">
+      <div class="invalid-feedback" *ngIf="password?.invalid && password?.touched">
+        <!--TODO: TRANSLATE LATER-->
+        <span *ngIf="password?.errors?.['required']">Password is required</span>
+        <span *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long.</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <!--TODO: TRANSLATE LATER-->
+      <label for="phoneNumber">PhoneNumber</label>
+      <input type="tel" id="phoneNumber" formControlName="phoneNumber" class="form-control" [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched">
+      <!--TODO: TRANSLATE LATER-->
+      <div class="invalid-feedback" *ngIf="phoneNumber?.invalid && phoneNumber?.touched">PhoneNumber is required</div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Rol</label>
+      <select id="role" formControlName="role" class="form-control">
+        <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+      </select>
+    </div>
+
+    <div *ngIf="role?.value === 'MEDIC'">
+      <div class="form-group">
+        <!--TODO: TRANSLATE LATER-->
+        <label for="medicalLicense">Medical License</label>
+        <input type="text" id="medicalLicense" formControlName="medicalLicense" class="form-control" [class.is-invalid]="medicalLicense?.invalid && medicalLicense?.touched">
+        <!--TODO: TRANSLATE LATER-->
+        <div class="invalid-feedback" *ngIf="medicalLicense?.invalid && medicalLicense?.touched">Medic License is required for medics</div>
+      </div>
+
+      <div class="form-group">
+        <!--TODO: TRANSLATE LATER-->
+        <label for="specialty">Specialty</label>
+        <input type="text" id="specialty" formControlName="specialty" class="form-control" [class.is-invalid]="specialty?.invalid && specialty?.touched">
+        <!--TODO: TRANSLATE LATER-->
+        <div class="invalid-feedback" *ngIf="specialty?.invalid && specialty?.touched">Specialty is required for medics</div>
+      </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+    <button type="submit" class="button button-primary" [disabled]="loading">
+      <!--TODO: TRANSLATE LATER-->
+      {{ loading? 'Registering...' : 'Register'}}
+    </button>
+    <!--TODO: TRANSLATE LATER-->
+    <p class="text-center mt-3">Do you have a count? <a routerLink="/login">Log in</a></p>
+
+  </form>
+</div>
