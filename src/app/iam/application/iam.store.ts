@@ -62,7 +62,7 @@ export class AppStore {
   logout() {
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/iam/login']);
   }
 
   /**
