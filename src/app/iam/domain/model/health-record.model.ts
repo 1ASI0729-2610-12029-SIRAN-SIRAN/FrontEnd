@@ -1,11 +1,11 @@
-// monitoring/domain/model/health-record.model.ts
+
 
 export interface HealthRecord {
   idHealthRecord: string;
   temperature:      number;   // °C
   weight:           number;   // kg
   oxygenSaturation: number;   // %
-  heartRate?:       number;   // lpm  (campo extra en frontend)
+  heartRate?:       number;   // lpm
   respiratoryRate?: number;   // rpm
   createdAt:        string;   // ISO date string
   idBaby:           string;

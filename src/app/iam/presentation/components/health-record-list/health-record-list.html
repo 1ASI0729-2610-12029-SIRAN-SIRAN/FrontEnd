@@ -1,0 +1,90 @@
+
+
+<div class="records-container">
+
+  <!-- Header -->
+  <div class="records-header">
+    <div>
+      <h2 class="records-title">
+        <i class="ti ti-activity"></i> Signos Vitales · HealthRecord
+      </h2>
+      <p class="records-sub">Historial de registros fisiológicos del neonato</p>
+    </div>
+    <a routerLink="/monitoring/records/new" class="btn-primary">
+      <i class="ti ti-plus"></i> Nuevo Registro
+    </a>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="isLoading" class="state-empty">
+    <i class="ti ti-loader-2 spin"></i>
+    <p>Cargando registros...</p>
+  </div>
+
+  <!-- Empty -->
+  <div *ngIf="!isLoading && records.length === 0" class="state-empty">
+    <i class="ti ti-clipboard-list"></i>
+    <p>No hay registros aún.</p>
+    <a routerLink="/monitoring/records/new" class="btn-primary">Agregar primer registro</a>
+  </div>
+
+  <!-- Table -->
+  <div *ngIf="!isLoading && records.length > 0" class="table-wrapper">
+    <table class="records-table">
+      <thead>
+        <tr>
+          <th>Fecha y hora</th>
+          <th>Temperatura</th>
+          <th>SpO₂</th>
+          <th>FC</th>
+          <th>FR</th>
+          <th>Peso</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of records; trackBy: trackById">
+          <td class="td-date">{{ record.createdAt | date: 'dd/MM/yyyy HH:mm' }}</td>
+
+          <td>
+            <span class="vital-cell">
+              {{ record.temperature }} °C
+              <span class="dot" [ngClass]="'dot-' + statusOf(record.temperature, 'temperature')"></span>
+            </span>
+          </td>
+
+          <td>
+            <span class="vital-cell">
+              {{ record.oxygenSaturation }}%
+              <span class="dot" [ngClass]="'dot-' + statusOf(record.oxygenSaturation, 'oxygenSaturation')"></span>
+            </span>
+          </td>
+
+          <td>
+            <span *ngIf="record.heartRate; else na">
+              {{ record.heartRate }} lpm
+            </span>
+          </td>
+
+          <td>
+            <span *ngIf="record.respiratoryRate; else na">
+              {{ record.respiratoryRate }} rpm
+            </span>
+          </td>
+
+          <td>{{ record.weight }} kg</td>
+
+          <td class="td-actions">
+            <button class="btn-icon btn-danger" (click)="deleteRecord(record.idHealthRecord)"
+                    title="Eliminar registro">
+              <i class="ti ti-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #na><span class="text-muted">—</span></ng-template>
+
+</div>
