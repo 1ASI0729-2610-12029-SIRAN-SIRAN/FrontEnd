@@ -16,4 +16,10 @@ export abstract class AuthRepository {
    * @param user New user with persistent data
    */
   abstract register(user: User): Observable<User>;
+
+  /**
+   * to Update credentials of user in the system
+   * @param user existing user with new credentials
+   */
+  abstract update(user: User): Observable<User>;
 }
