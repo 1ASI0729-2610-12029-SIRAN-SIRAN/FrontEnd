@@ -1,0 +1,14 @@
+<app-baby-list
+  [userId]="currentUserId"
+  *ngIf="!editingBaby && !creating"
+  (editBaby)="startEdit($event)"
+  (addBaby)="startCreate()">
+</app-baby-list>
+
+<app-baby-form
+  *ngIf="creating || editingBaby"
+  [baby]="editingBaby"
+  [userId]="currentUserId"
+  (save)="saveBaby($event)"
+  (cancel)="cancelForm()">
+</app-baby-form>

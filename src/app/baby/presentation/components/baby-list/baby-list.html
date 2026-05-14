@@ -1,13 +1,18 @@
 <div class="baby-list">
   <h3>My Babies</h3>
   <div *ngIf="babies$ | async as babies">
-    <div *ngIf="babies.length === 0">You don't have a Baby!</div>
-    <app-baby-item
-      *ngFor="let baby of babies"
-      [baby]="baby"
-      (edit)="onEditBaby($event)"
-      (delete)="onDeleteBaby($event)">
-    </app-baby-item>
-    <button (click)="onAddBaby()">+ Registered New Baby</button>
+    <div *ngIf="babies.length === 0">You don't have any baby</div>
+    <div *ngFor="let baby of babies" class="baby-item">
+      <div>
+        <strong>{{ baby.name }}</strong> - {{ baby.gender }}
+        <br />
+        <small>Birthday: {{ baby.birthday | date:'dd/MM/yyyy' }}</small>
+      </div>
+      <div>
+        <button (click)="onEditBaby(baby)">Edit</button>
+        <button (click)="onDeleteBaby(baby.id)">Delete</button>
+      </div>
+    </div>
+    <button (click)="onAddBaby()">+ Registered new baby</button>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Baby} from '../../../domain/model/baby.entity';
 import {Observable} from 'rxjs';
@@ -7,12 +7,16 @@ import {BabyItem} from '../baby-item/baby-item';
 
 @Component({
   selector: 'app-baby-list',
-  imports: [CommonModule, BabyItem],
+  imports: [CommonModule],
   templateUrl: './baby-list.html',
   styleUrl: './baby-list.css',
 })
 export class BabyList {
   @Input() userId!: string;
+  @Output() addBaby = new EventEmitter<void>();
+  @Output() editBaby = new EventEmitter<Baby>();
+  @Output() deleteBaby = new EventEmitter<string>();
+
   babies$: Observable<Baby[]>;
 
   constructor(private babyStore: BabiesStore) {
@@ -25,14 +29,14 @@ export class BabyList {
   }
 
   onAddBaby(): void {
-    console.log('Create New Baby Run');
+    this.addBaby.emit();
   }
-
   onEditBaby(baby: Baby): void {
-    console.log('Edit:', baby);
+    this.editBaby.emit(baby);
   }
-
   onDeleteBaby(id: string): void {
-    this.babyStore.deleteBaby(id).subscribe();
+    if (confirm('Delete this Baby?')) {
+      this.deleteBaby.emit(id);
+    }
   }
 }

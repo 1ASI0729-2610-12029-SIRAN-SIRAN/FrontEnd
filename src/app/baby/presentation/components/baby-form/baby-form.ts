@@ -1,10 +1,12 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Baby} from '../../../domain/model/baby.entity';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-baby-form',
   imports: [
+    CommonModule,
     ReactiveFormsModule
   ],
   templateUrl: './baby-form.html',

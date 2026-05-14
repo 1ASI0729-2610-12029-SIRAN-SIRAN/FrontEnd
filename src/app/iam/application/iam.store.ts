@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, map, Observable, tap} from 'rxjs';
 import {User} from '../domain/model/user.entity';
 import {Router} from '@angular/router';
-import {IamApiRepository} from '../infrastructure/iam-api.repository';
+import {IamApi} from '../infrastructure/iam-api';
 /**
  * Centralized state management for authentication and user sessions
  * Acts as the Single Source of Truth for the current user's state
@@ -16,7 +16,7 @@ export class AppStore {
    * @param authRepository Contract to interact with identity and access data
    * @param router For handling navigation after auth events
    */
-  constructor(private authRepository: IamApiRepository, private router: Router) {
+  constructor(private authRepository: IamApi, private router: Router) {
     const stored = localStorage.getItem('currentUser');
     let initialUser: User | null = null;
     if (stored) {

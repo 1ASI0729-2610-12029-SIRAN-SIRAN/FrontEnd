@@ -21,7 +21,7 @@ export class BabyApi extends BabyRepository{
    * @param id
    */
   getById(id: string): Observable<Baby | null> {
-    const url = `${this.baseUrl}/${this.endpoint}/${id}`;
+    const url = `${this.baseUrl}${this.endpoint}/${id}`;
     return this.http.get<BabyResponse>(url).pipe(
       map(response => response ? BabyAssembler.toEntityFromResponse(response) : null)
     );
@@ -32,7 +32,7 @@ export class BabyApi extends BabyRepository{
    * @param userId Parent's id
    */
   getByUserId(userId: string): Observable<Baby[]> {
-    const url = `${this.baseUrl}/${this.endpoint}?idUser=${userId}`;
+    const url = `${this.baseUrl}${this.endpoint}?idUser=${userId}`;
     return this.http.get<BabyResponse[]>(url).pipe(
       map(response => response.map(r => BabyAssembler.toEntityFromResponse(r)))
     );
@@ -43,7 +43,7 @@ export class BabyApi extends BabyRepository{
    * @param baby baby's id
    */
   create(baby: Baby): Observable<Baby> {
-    const url = `${this.baseUrl}/${this.endpoint}`;
+    const url = `${this.baseUrl}${this.endpoint}`;
     const resource = BabyAssembler.toResourceFromEntity(baby);
     return this.http.post<BabyResponse>(url, resource).pipe(
       map(response => BabyAssembler.toEntityFromResponse(response))
