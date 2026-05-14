@@ -10,7 +10,7 @@ import {UserAssembler} from './user-assembler';
 /**
  * Implementation of AuthRepository using REST API.
  * This class handles the communication with the backend, but, in this case tp1, with a fake api.
- * This is a service to IAM context, so the name is IamApiRepository
+ * This is a repository to IAM context, so the name is IamApiRepository
  */
 @Injectable({ providedIn: 'root' })
 export class IamApiRepository extends AuthRepository{
