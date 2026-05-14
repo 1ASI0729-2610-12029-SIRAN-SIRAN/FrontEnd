@@ -1,5 +1,7 @@
 import {Role} from '../../shared/domain/model/role.enum';
-
+/**
+ * Represents the raw data structured received from REST API
+ */
 export interface UserResponse {
   id: string;
   email: string;
@@ -11,7 +13,9 @@ export interface UserResponse {
   medicalLicense: string | null;
   specialty: string | null;
 }
-
+/**
+ * DTO used for communication between applications layers
+ */
 export interface UserResource{
   id: string;
   email: string;
