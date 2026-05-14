@@ -1,0 +1,10 @@
+<div class="baby-item">
+  <div class="baby-info">
+    <strong>{{ baby.name }}</strong> ({{ baby.gender }})
+    <span class="birthday">Birthday: {{ baby.birthday | date:'dd/MM/yyyy' }}</span>
+  </div>
+  <div class="baby-actions">
+    <button (click)="onEdit()">Edit</button>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+</div>

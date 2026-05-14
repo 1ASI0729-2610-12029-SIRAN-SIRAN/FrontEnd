@@ -1,0 +1,13 @@
+<div class="baby-list">
+  <h3>My Babies</h3>
+  <div *ngIf="babies$ | async as babies">
+    <div *ngIf="babies.length === 0">You don't have a Baby!</div>
+    <app-baby-item
+      *ngFor="let baby of babies"
+      [baby]="baby"
+      (edit)="onEditBaby($event)"
+      (delete)="onDeleteBaby($event)">
+    </app-baby-item>
+    <button (click)="onAddBaby()">+ Registered New Baby</button>
+  </div>
+</div>
