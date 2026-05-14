@@ -1,0 +1,52 @@
+<div class="profile-container">
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
+    <!--TODO: Translate later-->
+    <h2>Update Profile</h2>
+
+    <div class="form-group">
+      <!--TODO: Translate later-->
+      <label for="name">Full name</label>
+      <input type="text" id="name" formControlName="name" class="form-control" [class.is-invalid]="name?.invalid && name?.touched">
+      <!--TODO: Translate later-->
+      <div class="invalid-feedback" *ngIf="name?.invalid && name?.touched">Name is required</div>
+    </div>
+
+    <div class="form-group">
+      <!--TODO: Translate later-->
+      <label for="phoneNumber">PhoneNumber</label>
+      <input type="tel" id="phoneNumber" formControlName="phoneNumber" class="form-control" [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched">
+      <!--TODO: Translate later-->
+      <div class="invalid-feedback" *ngIf="phoneNumber?.invalid && phoneNumber?.touched">PhoneNumer is required</div>
+    </div>
+
+    @if (currentUser?.role === 'MEDIC') {
+      <div class="form-group">
+        <!--TODO: Translate later-->
+        <label for="medicalLicense">Medic License</label>
+        <input type="text" id="medicalLicense" formControlName="medicalLicense" class="form-control" [class.is-invalid]="medicalLicense?.invalid && medicalLicense?.touched">
+        <!--TODO: Translate later-->
+        <div class="invalid-feedback" *ngIf="medicalLicense?.invalid && medicalLicense?.touched">Medical License is required</div>
+      </div>
+
+      <div class="form-group">
+        <!--TODO: Translate later-->
+        <label for="specialty">Specialty</label>
+        <input type="text" id="specialty" formControlName="specialty" class="form-control" [class.is-invalid]="specialty?.invalid && specialty?.touched">
+        <!--TODO: Translate later-->
+        <div class="invalid-feedback" *ngIf="specialty?.invalid && specialty?.touched">Specialty is required</div>
+      </div>
+    }
+
+    @if (errorMessage) {
+      <div class="alert alert-danger">{{ errorMessage }}</div>
+    }
+    @if (successMessage) {
+      <div class="alert alert-success">{{ successMessage }}</div>
+    }
+
+    <button type="submit" class="btn btn-primary" [disabled]="loading">
+      <!--TODO: Translate later-->
+      {{ loading ? 'Saving...' : 'Changes Saved' }}
+    </button>
+  </form>
+</div>
