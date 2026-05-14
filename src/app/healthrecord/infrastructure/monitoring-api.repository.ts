@@ -1,22 +1,23 @@
-// src/app/healthrecord/infrastructure/monitoring-api.repository.ts
-
-import {Injectable} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { HealthRecord } from '../domain/model/health-record.entity';
 
 @Injectable({ providedIn: 'root' })
 export class MonitoringApiRepository {
-  private baseUrl = 'http://localhost:8080/healthRecords';
+  private readonly http = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
+
+  private readonly baseUrl: string = environment.fakeDatabaseProviderApiBaseUrl;
+  private readonly path: string = '/healthRecords';
 
   getAll(): Observable<HealthRecord[]> {
-    return this.http.get<HealthRecord[]>(this.baseUrl);
+    return this.http.get<HealthRecord[]>(`${this.baseUrl}${this.path}`);
   }
 
-  // Método que recibe el objeto y lo guarda en db.json
+
   create(record: any): Observable<HealthRecord> {
-    return this.http.post<HealthRecord>(this.baseUrl, record);
+    return this.http.post<HealthRecord>(`${this.baseUrl}${this.path}`, record);
   }
 }
