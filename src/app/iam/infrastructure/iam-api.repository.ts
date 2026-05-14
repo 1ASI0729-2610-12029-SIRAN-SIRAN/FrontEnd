@@ -53,4 +53,17 @@ export class IamApiRepository extends AuthRepository{
       map(response => UserAssembler.toEntityFromResponse(response))
     );
   }
+
+  /**
+   * Update an existing user in the system
+   * @param user User entity with modified data
+   * @returns Observable of the updated User entity
+   */
+  update(user: User): Observable<User>{
+    const url = `${this.baseUrl}${this.userPath}/${user.id}`;
+    const resource = UserAssembler.toEntityFromResource(user);
+    return this.http.put<UserResponse>(url, resource).pipe(
+      map(response => UserAssembler.toEntityFromResponse(response))
+    );
+  }
 }
