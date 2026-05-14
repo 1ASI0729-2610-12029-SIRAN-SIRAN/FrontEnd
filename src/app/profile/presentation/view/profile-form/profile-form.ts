@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import { AppStore } from '../../../../iam/application/iam.store';
-import {Router} from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
+import { CommonModule } from '@angular/common';
 import {Role} from '../../../../shared/domain/model/role.enum';
 import {User} from '../../../../iam/domain/model/user.entity';
+import {finalize} from 'rxjs';
 
 @Component({
   selector: 'app-profile-form',
   imports: [
-    ReactiveFormsModule
+    CommonModule,
+    ReactiveFormsModule,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './profile-form.html',
   styleUrl: './profile-form.css',
@@ -32,6 +37,7 @@ export class ProfileForm {
   ngOnInit() {
     if (!this.currentUser){
       this.router.navigate(['/login']);
+      return;
     }
 
     this.profileForm = this.fb.group({
@@ -69,7 +75,8 @@ export class ProfileForm {
       updateData.medicalLicense = formValue.medicalLicense;
       updateData.specialty = formValue.specialty;
     }
-    this.appStore.updateUser(updateData).subscribe({
+    this.appStore.updateUser(updateData)
+      .pipe(finalize(()=>this.loading = false)).subscribe({
       next: (updatedData) => {
         this.loading = false;
         this.successMessage = `Profile updated successfully.`;

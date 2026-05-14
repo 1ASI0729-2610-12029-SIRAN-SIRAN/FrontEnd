@@ -1,4 +1,9 @@
+<a routerLink="/home" routerLinkActive="active" class="nav-item">
+  <i class="nav-icon ti ti-chevron-left"></i>
+</a>
+
 <div class="profile-container">
+
   <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="profile-form">
     <!--TODO: Translate later-->
     <h2>Update Profile</h2>
@@ -16,7 +21,7 @@
       <label for="phoneNumber">PhoneNumber</label>
       <input type="tel" id="phoneNumber" formControlName="phoneNumber" class="form-control" [class.is-invalid]="phoneNumber?.invalid && phoneNumber?.touched">
       <!--TODO: Translate later-->
-      <div class="invalid-feedback" *ngIf="phoneNumber?.invalid && phoneNumber?.touched">PhoneNumer is required</div>
+      <div class="invalid-feedback" *ngIf="phoneNumber?.invalid && phoneNumber?.touched">PhoneNumber is required</div>
     </div>
 
     @if (currentUser?.role === 'MEDIC') {
