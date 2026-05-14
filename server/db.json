@@ -1,0 +1,470 @@
+{
+  "users": [
+    {
+      "id": "U001",
+      "email": "carlosmendoza@gmail.com",
+      "password": "hash_password_1",
+      "role": "PARENT",
+      "name": "Carlos Mendoza",
+      "phoneNumber": "981223344",
+      "createdAt": "2026-01-10T10:00:00",
+      "medicalLicense": null,
+      "specialty": null
+    },
+    {
+      "id": "U002",
+      "email": "draelenavargas@clinicamedica.pe",
+      "password": "hash_password_2",
+      "role": "MEDIC",
+      "name": "Dra. Elena Vargas",
+      "phoneNumber": "912445566",
+      "createdAt": "2026-01-11T08:30:00",
+      "medicalLicense": "CMP-77421",
+      "specialty": "Pediatría"
+    },
+    {
+      "id": "U003",
+      "email": "marianarojas88@outlook.com",
+      "password": "hash_password_3",
+      "role": "PARENT",
+      "name": "Mariana Rojas",
+      "phoneNumber": "955667788",
+      "createdAt": "2026-02-01T15:20:00",
+      "medicalLicense": null,
+      "specialty": null
+    },
+    {
+      "id": "U004",
+      "email": "drjaviersolis@hospitalcentral.gob",
+      "password": "hash_password_4",
+      "role": "MEDIC",
+      "name": "Dr. Javier Solís",
+      "phoneNumber": "933112233",
+      "createdAt": "2026-02-15T09:00:00",
+      "medicalLicense": "CMP-88123",
+      "specialty": "Neonatología"
+    },
+    {
+      "id": "U005",
+      "email": "ricardolunadev@tecnologia.com",
+      "password": "hash_password_5",
+      "role": "ADMIN",
+      "name": "Ricardo Luna",
+      "phoneNumber": "900111222",
+      "createdAt": "2026-01-01T00:00:00",
+      "medicalLicense": null,
+      "specialty": null
+    },
+    {
+      "id": "U-_0pxE",
+      "email": "hola@gmail.com",
+      "password": "123456",
+      "role": "PARENT",
+      "phoneNumber": "983754088",
+      "medicalLicense": null,
+      "specialty": null,
+      "createdAt": "",
+      "name": "Erick"
+    },
+    {
+      "id": "EOndJkT",
+      "email": "developer@gmail.com",
+      "password": "developer",
+      "role": "MEDIC",
+      "phoneNumber": "999000999",
+      "medicalLicense": "000999",
+      "specialty": "cardiologo",
+      "createdAt": "",
+      "name": "jorge"
+    }
+  ],
+  "subscriptionPlans": [
+    {
+      "id": "P001",
+      "name": "Basico",
+      "price": 29.9,
+      "features": "Sin anuncios, Monitoreo basico, Registro diario"
+    },
+    {
+      "id": "P002",
+      "name": "Pro",
+      "price": 60,
+      "features": "Lo anterior, Monitoreo avanzado, Alertas inteligentes"
+    },
+    {
+      "id": "P003",
+      "name": "Enterprise",
+      "price": 99.9,
+      "features": "Lo anterior, Monitoreo multiple, Reporte profesional"
+    }
+  ],
+  "userSubscriptions": [
+    {
+      "id": "US001",
+      "idUser": "U001",
+      "idPlan": "P003",
+      "startDate": "2026-01-10",
+      "endDate": "2027-01-10",
+      "paymentStatus": "PAID"
+    },
+    {
+      "id": "US002",
+      "idUser": "U003",
+      "idPlan": "P001",
+      "startDate": "2026-02-01",
+      "endDate": "2026-03-01",
+      "paymentStatus": "PAID"
+    },
+    {
+      "id": "US003",
+      "idUser": "U002",
+      "idPlan": "P002",
+      "startDate": "2026-03-15",
+      "endDate": "2026-04-15",
+      "paymentStatus": "PENDING"
+    },
+    {
+      "id": "US004",
+      "idUser": "U004",
+      "idPlan": "P003",
+      "startDate": "2026-01-20",
+      "endDate": "2027-01-20",
+      "paymentStatus": "PAID"
+    },
+    {
+      "id": "US005",
+      "idUser": "U005",
+      "idPlan": "P003",
+      "startDate": "2026-01-01",
+      "endDate": "2099-12-31",
+      "paymentStatus": "PAID"
+    }
+  ],
+  "babies": [
+    {
+      "id": "B001",
+      "name": "Thiago Mendoza",
+      "birthday": "2025-11-20T05:00:00",
+      "gender": "Masculino",
+      "idUser": "U001"
+    },
+    {
+      "id": "B002",
+      "name": "Valentina Rojas",
+      "birthday": "2026-01-05T14:30:00",
+      "gender": "Femenino",
+      "idUser": "U003"
+    },
+    {
+      "id": "B003",
+      "name": "Luciana Mendoza",
+      "birthday": "2025-11-20T05:15:00",
+      "gender": "Femenino",
+      "idUser": "U001"
+    },
+    {
+      "id": "B004",
+      "name": "Mateo Solís",
+      "birthday": "2026-03-10T08:00:00",
+      "gender": "Masculino",
+      "idUser": "U004"
+    },
+    {
+      "id": "B005",
+      "name": "Liam Vargas",
+      "birthday": "2026-04-02T22:10:00",
+      "gender": "Masculino",
+      "idUser": "U002"
+    },
+    {
+      "id": "RtZFTsi",
+      "name": "Jorge Manuel",
+      "birthday": "2026-05-14",
+      "gender": "Masculino",
+      "idUser": "U001"
+    },
+    {
+      "id": "EnlEblB",
+      "name": "Jorge Manuel",
+      "birthday": "2026-05-14",
+      "gender": "Femenino",
+      "idUser": "U001"
+    }
+  ],
+  "devices": [
+    {
+      "id": "D001",
+      "model": "BabyWatch-Alpha",
+      "status": "ONLINE",
+      "firmwareVersion": "2.4.0",
+      "idBaby": "B001"
+    },
+    {
+      "id": "D002",
+      "model": "BabyWatch-Alpha",
+      "status": "OFFLINE",
+      "firmwareVersion": "2.4.0",
+      "idBaby": "B002"
+    },
+    {
+      "id": "D003",
+      "model": "BabyWatch-Beta",
+      "status": "ONLINE",
+      "firmwareVersion": "3.1.2",
+      "idBaby": "B003"
+    },
+    {
+      "id": "D004",
+      "model": "SmartSock-X",
+      "status": "LOW_BATTERY",
+      "firmwareVersion": "1.0.5",
+      "idBaby": "B004"
+    },
+    {
+      "id": "D005",
+      "model": "SmartSock-X",
+      "status": "ONLINE",
+      "firmwareVersion": "1.0.5",
+      "idBaby": "B005"
+    }
+  ],
+  "healthRecords": [
+    {
+      "id": "HR001",
+      "temperature": 36.5,
+      "weight": 4.2,
+      "oxygenSaturation": 98,
+      "createdAt": "2026-05-01T10:00:00",
+      "idBaby": "B001",
+      "idDevice": "D001"
+    },
+    {
+      "id": "HR002",
+      "temperature": 37.8,
+      "weight": 4.21,
+      "oxygenSaturation": 97,
+      "createdAt": "2026-05-02T10:00:00",
+      "idBaby": "B001",
+      "idDevice": "D001"
+    },
+    {
+      "id": "HR003",
+      "temperature": 36.8,
+      "weight": 3.85,
+      "oxygenSaturation": 99,
+      "createdAt": "2026-05-02T11:00:00",
+      "idBaby": "B002",
+      "idDevice": "D002"
+    },
+    {
+      "id": "HR004",
+      "temperature": 36.6,
+      "weight": 4.15,
+      "oxygenSaturation": 98.5,
+      "createdAt": "2026-05-03T09:30:00",
+      "idBaby": "B003",
+      "idDevice": "D003"
+    },
+    {
+      "id": "HR005",
+      "temperature": 37.2,
+      "weight": 3.9,
+      "oxygenSaturation": 96,
+      "createdAt": "2026-05-03T12:00:00",
+      "idBaby": "B004",
+      "idDevice": "D004"
+    },
+    {
+      "temperature": 38.9,
+      "weight": 10,
+      "oxygenSaturation": 99,
+      "idBaby": "B001",
+      "idDevice": "D001",
+      "id": "HR153",
+      "createdAt": "2026-05-14T20:38:52.655Z"
+    }
+  ],
+  "followUps": [
+    {
+      "id": "F001",
+      "status": "ACTIVE",
+      "startAt": "2026-05-01",
+      "endAt": null,
+      "idBaby": "B001",
+      "idUser": "U002"
+    },
+    {
+      "id": "F002",
+      "status": "COMPLETED",
+      "startAt": "2026-04-15",
+      "endAt": "2026-04-30",
+      "idBaby": "B002",
+      "idUser": "U004"
+    },
+    {
+      "id": "F003",
+      "status": "ACTIVE",
+      "startAt": "2026-05-02",
+      "endAt": null,
+      "idBaby": "B003",
+      "idUser": "U002"
+    },
+    {
+      "id": "F004",
+      "status": "PENDING",
+      "startAt": "2026-05-10",
+      "endAt": null,
+      "idBaby": "B004",
+      "idUser": "U004"
+    },
+    {
+      "id": "F005",
+      "status": "ACTIVE",
+      "startAt": "2026-05-01",
+      "endAt": null,
+      "idBaby": "B005",
+      "idUser": "U004"
+    }
+  ],
+  "alertRanges": [
+    {
+      "id": "AR001",
+      "type": "Fiebre",
+      "maxValue": 38,
+      "minValue": 35.5,
+      "description": "Rango normal de temperatura",
+      "idUser": "U002"
+    },
+    {
+      "id": "AR002",
+      "type": "Oxigenación",
+      "maxValue": 100,
+      "minValue": 94,
+      "description": "Nivel crítico de saturación",
+      "idUser": "U002"
+    },
+    {
+      "id": "AR003",
+      "type": "Peso",
+      "maxValue": 10,
+      "minValue": 2.5,
+      "description": "Crecimiento esperado",
+      "idUser": "U004"
+    },
+    {
+      "id": "AR004",
+      "type": "Ritmo Cardiaco",
+      "maxValue": 160,
+      "minValue": 100,
+      "description": "Pulsaciones en reposo",
+      "idUser": "U004"
+    },
+    {
+      "id": "AR005",
+      "type": "Temperatura Ambiente",
+      "maxValue": 25,
+      "minValue": 18,
+      "description": "Clima ideal habitación",
+      "idUser": "U002"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "N001",
+      "type": "ALERT",
+      "read": false,
+      "description": "Thiago Mendoza presenta temperatura de 37.8°C",
+      "readAt": null,
+      "sentAt": "2026-05-02T10:05:00",
+      "idUser": "U001",
+      "idHealthRecord": "HR002"
+    },
+    {
+      "id": "N002",
+      "type": "INFO",
+      "read": true,
+      "description": "Su suscripción Pro ha sido renovada",
+      "readAt": "2026-02-01T16:00:00",
+      "sentAt": "2026-02-01T15:30:00",
+      "idUser": "U003",
+      "idHealthRecord": null
+    },
+    {
+      "id": "N003",
+      "type": "WARNING",
+      "read": false,
+      "description": "Batería baja en dispositivo D004",
+      "readAt": null,
+      "sentAt": "2026-05-03T12:05:00",
+      "idUser": "U004",
+      "idHealthRecord": "HR005"
+    },
+    {
+      "id": "N004",
+      "type": "REMINDER",
+      "read": false,
+      "description": "Cita de seguimiento con Dra. Elena mañana",
+      "readAt": null,
+      "sentAt": "2026-05-03T18:00:00",
+      "idUser": "U001",
+      "idHealthRecord": null
+    },
+    {
+      "id": "N005",
+      "type": "SUCCESS",
+      "read": true,
+      "description": "Reporte mensual de Valentina listo",
+      "readAt": "2026-05-01T10:00:00",
+      "sentAt": "2026-05-01T09:00:00",
+      "idUser": "U003",
+      "idHealthRecord": null
+    }
+  ],
+  "healthReports": [
+    {
+      "id": "REP001",
+      "generatedAt": "2026-05-01T00:00:00",
+      "summary": "Crecimiento constante, signos vitales normales.",
+      "pdfURL": "https://storage.app.com/reports/thiago_mayo.pdf",
+      "avgTemperature": 36.6,
+      "weightGain": 0.45,
+      "idBaby": "B001"
+    },
+    {
+      "id": "REP002",
+      "generatedAt": "2026-05-01T00:00:00",
+      "summary": "Ligera baja de peso, se recomienda seguimiento.",
+      "pdfURL": "https://storage.app.com/reports/valentina_mayo.pdf",
+      "avgTemperature": 36.8,
+      "weightGain": -0.05,
+      "idBaby": "B002"
+    },
+    {
+      "id": "REP003",
+      "generatedAt": "2026-05-01T00:00:00",
+      "summary": "Estado excelente.",
+      "pdfURL": "https://storage.app.com/reports/luciana_mayo.pdf",
+      "avgTemperature": 36.5,
+      "weightGain": 0.4,
+      "idBaby": "B003"
+    },
+    {
+      "id": "REP004",
+      "generatedAt": "2026-04-15T00:00:00",
+      "summary": "Primer reporte tras nacimiento.",
+      "pdfURL": "https://storage.app.com/reports/mateo_abril.pdf",
+      "avgTemperature": 37,
+      "weightGain": 0.2,
+      "idBaby": "B004"
+    },
+    {
+      "id": "REP005",
+      "generatedAt": "2026-05-01T00:00:00",
+      "summary": "Saturación estable.",
+      "pdfURL": "https://storage.app.com/reports/liam_mayo.pdf",
+      "avgTemperature": 36.7,
+      "weightGain": 0.35,
+      "idBaby": "B005"
+    }
+  ]
+}

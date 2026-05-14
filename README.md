@@ -1,59 +1,59 @@
-# Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+## 🌟 Introducción
+**SIRAN** es una solución tecnológica diseñada para transformar el cuidado neonatal. Nuestra aplicación permite a padres y profesionales de la salud monitorear en tiempo real los signos vitales críticos de los recién nacidos (Temperatura, Peso y Saturación de Oxígeno), proporcionando alertas tempranas basadas en rangos médicos para prevenir complicaciones de salud.
 
-## Development server
+Este frontend ha sido desarrollado bajo estándares de Domain Driven desing, asegurando que el sistema sea escalable, mantenible y fácil de testear.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🛠️ Stack Tecnológico y Dependencias
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+El proyecto utiliza las últimas tecnologías del ecosistema de Angular:
 
-## Code scaffolding
+- **Framework:** Angular 19+ (v21.2.9)
+- **Lenguaje:** TypeScript
+- **Estilos y UI:** Angular Material & CDK (v21.2.7) para componentes de diseño modular.
+- **Estado y Reactividad:** RxJS (~7.8.0) para el manejo de flujos de datos asíncronos.
+- **Traducción:** @ngx-translate para soporte multi-idioma.
+- **Testing:** Vitest y JSDOM para pruebas unitarias rápidas y modernas.
+- **Calidad de Código:** Prettier para un formato de código consistente.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## Arquitectura y Lógica de Organización
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Hemos implementado una estructura basada en **Domain-Driven Design (DDD)** dividida por Bounded Contexts (como `healthrecord`). Cada contexto se organiza en las siguientes capas:
 
-```bash
-ng generate --help
-```
+### 1. Domain (Dominio)
+Es el "corazón" de la aplicación. Contiene la lógica de negocio pura sin dependencias externas.
+- **Model:** Define las interfaces y entidades (ej. `HealthRecord`, `AlertRange`).
+- **Service:** Contiene los casos de uso y lógica de evaluación (ej. `evaluateStatus` para determinar si un signo vital es peligroso).
 
-## Building
+### 2. Infrastructure (Infraestructura)
+Se encarga de la comunicación con el exterior.
+- **Repositories:** Implementa las llamadas a la API (JSON Server) utilizando `HttpClient`. Transforma los datos externos al formato que el Dominio entiende.
 
-To build the project run:
+### 3. Presentation (Presentación)
+Capa encargada de la interfaz de usuario.
+- **Components:** Componentes Standalone (Angular modernos) con lógica de vista.
+- **HTML/CSS:** Estructura y diseño profesional enfocado en la experiencia del usuario (UX).
 
-```bash
-ng build
-```
+### 4. Application (Aplicación)
+Gestiona la orquestación del sistema, como las rutas de navegación (`monitoring.routes.ts`) y la configuración global.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 📋 Historias de Usuario Implementadas
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- **[HU01] Registro de Signos Vitales:** Formulario validado para temperatura, peso y SpO2.
+- **[HU02] Historial Clínico:** Visualización cronológica de todos los registros capturados.
+- **[HU07/HU08/HU10] Gestión de Acceso (IAM):** Flujo completo de Registro, Login y Logout con roles de Padre y Médico.
+- **[HU12] Resumen de Salud:** Panel de visualización rápida del último estado detectado.
+- **[HU17] Diseño Responsivo:** Interfaz adaptativa optimizada para escritorio y dispositivos móviles.
+---
 
-```bash
-ng test
-```
+## Instalación y Ejecución
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Instalar dependencias:**
+   ```bash
+   npm install

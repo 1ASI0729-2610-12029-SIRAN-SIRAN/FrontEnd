@@ -1,0 +1,201 @@
+<div class="dashboard-layout">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png" alt="SIRAN Logo" class="logo-img">
+    </div>
+
+    <nav class="nav-menu">
+
+      <div class="nav-section">PRINCIPAL</div>
+      <a routerLink="/home" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-layout-dashboard"></i>
+        <span>Dashboard</span>
+      </a>
+
+      <div class="nav-section">MONITOREO</div>
+      <a routerLink="/monitoring/records" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-heartbeat"></i>
+        <span>Signos Vitales</span>
+      </a>
+      <a routerLink="/monitoring/alerts" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-bell-ringing"></i>
+        <span>Rangos de Alerta</span>
+      </a>
+
+      <div class="nav-section">GESTIÓN</div>
+      <a routerLink="/baby" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-baby-carriage"></i>
+        <span>Mi Bebé</span>
+      </a>
+      <a routerLink="/subscription/plans" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-credit-card"></i>
+        <span>Mi Suscripción</span>
+      </a>
+
+      <div class="nav-section">RECURSOS</div>
+      <a routerLink="/resources/guides" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-book-2"></i>
+        <span>Guías de Cuidado</span>
+      </a>
+      <a routerLink="/profile" routerLinkActive="active" class="nav-item">
+        <i class="nav-icon ti ti-users"></i>
+        <span>User Profile</span>
+      </a>
+
+    </nav>
+  </aside>
+
+  <!-- ===== MAIN ===== -->
+  <main class="main-content">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <h1 class="topbar-title">Panel de Control</h1>
+    </header>
+
+    <div class="content-area">
+
+      <!-- Welcome -->
+      <div class="welcome-banner">
+        <div class="welcome-text">
+          <h2>Bienvenido de vuelta</h2>
+          <p>Sincronización neonatal activa · Último HealthRecord hace 4 min</p>
+        </div>
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          Sistema en línea
+        </div>
+      </div>
+
+      <!-- Features Cards -->
+      <div class="stats-grid">
+
+        <div class="stat-card">
+          <div class="stat-icon icon-teal">
+            <i class="ti ti-heartbeat"></i>
+          </div>
+          <div class="stat-value">98</div>
+          <div class="stat-label">FC (lpm)</div>
+          <span class="stat-badge badge-ok">Normal</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-amber">
+            <i class="ti ti-thermometer"></i>
+          </div>
+          <div class="stat-value">36.8°</div>
+          <div class="stat-label">Temperatura</div>
+          <span class="stat-badge badge-warn">Vigilar</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-blue">
+            <i class="ti ti-lungs"></i>
+          </div>
+          <div class="stat-value">95%</div>
+          <div class="stat-label">SpO₂</div>
+          <span class="stat-badge badge-danger">Alerta</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon icon-red">
+            <i class="ti ti-bell"></i>
+          </div>
+          <div class="stat-value">2</div>
+          <div class="stat-label">Alertas hoy</div>
+          <span class="stat-badge badge-danger">Sin leer</span>
+        </div>
+
+      </div>
+
+      <!-- Home Overview -->
+      <div class="panels-grid">
+
+        <!-- Panel: Signos Vitales (HealthRecord) -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">
+              <i class="ti ti-activity"></i> Signos Vitales · HealthRecord
+            </span>
+            <a routerLink="/monitoring/records" class="panel-link">
+              Ver historial <i class="ti ti-arrow-right"></i>
+            </a>
+          </div>
+          <div class="vital-list">
+            <div class="vital-row">
+              <span class="vital-dot dot-ok"></span>
+              <span class="vital-name">Frecuencia cardíaca</span>
+              <span class="vital-value">98 lpm</span>
+              <span class="badge badge-ok">Normal</span>
+            </div>
+            <div class="vital-row">
+              <span class="vital-dot dot-ok"></span>
+              <span class="vital-name">Frec. respiratoria</span>
+              <span class="vital-value">42 rpm</span>
+              <span class="badge badge-ok">Normal</span>
+            </div>
+            <div class="vital-row">
+              <span class="vital-dot dot-warn"></span>
+              <span class="vital-name">Temperatura</span>
+              <span class="vital-value">36.8 °C</span>
+              <span class="badge badge-warn">Vigilar</span>
+            </div>
+            <div class="vital-row">
+              <span class="vital-dot dot-danger"></span>
+              <span class="vital-name">SpO₂</span>
+              <span class="vital-value">95%</span>
+              <span class="badge badge-danger">Alerta</span>
+            </div>
+            <div class="vital-row">
+              <span class="vital-dot dot-ok"></span>
+              <span class="vital-name">Peso</span>
+              <span class="vital-value">3.45 kg</span>
+              <span class="badge badge-ok">Normal</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Panel: Alertas (Notification + AlertRange) -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">
+              <i class="ti ti-bell-ringing"></i> Alertas · Notification
+            </span>
+            <a routerLink="/monitoring/alerts" class="panel-link">
+              Ver todas <i class="ti ti-arrow-right"></i>
+            </a>
+          </div>
+          <div class="alert-list">
+            <div class="alert-item">
+              <div class="alert-icon icon-red"><i class="ti ti-alert-circle"></i></div>
+              <div class="alert-body">
+                <div class="alert-title">SpO₂ fuera de AlertRange</div>
+                <div class="alert-desc">Saturación bajo mínimo configurado (96%)</div>
+              </div>
+              <span class="alert-time">10:32</span>
+            </div>
+            <div class="alert-item">
+              <div class="alert-icon icon-amber"><i class="ti ti-thermometer"></i></div>
+              <div class="alert-body">
+                <div class="alert-title">Temperatura elevada</div>
+                <div class="alert-desc">37.4 °C — límite AlertRange: 37.2 °C</div>
+              </div>
+              <span class="alert-time">09:15</span>
+            </div>
+            <div class="alert-item">
+              <div class="alert-icon icon-teal"><i class="ti ti-circle-check"></i></div>
+              <div class="alert-body">
+                <div class="alert-title">FC normalizada</div>
+                <div class="alert-desc">Frecuencia cardíaca dentro del rango</div>
+              </div>
+              <span class="alert-time">08:50</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+</div>
