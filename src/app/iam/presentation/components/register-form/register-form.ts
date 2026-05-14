@@ -7,6 +7,9 @@ import {IamApiRepository} from '../../../infrastructure/iam-api.repository';
 import {catchError, of, switchMap} from 'rxjs';
 import {CommonModule} from '@angular/common';
 
+/**
+ * Provides user interface and logic for creating new accounts.
+ */
 @Component({
   selector: 'app-register-form',
   imports: [
@@ -28,6 +31,9 @@ export class RegisterForm implements OnInit {
               private authRepository: IamApiRepository,
               private router: Router) {}
 
+  /**
+   * Initializes reactive form with default values and validations rules
+   */
   ngOnInit(): void {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
@@ -60,6 +66,10 @@ export class RegisterForm implements OnInit {
     });
   }
 
+  /**
+   * Handles form submission to validates form status
+   * Check if email is already registered and registration process.
+   */
   onSubmit(): void {
     if (this.registerForm.invalid) {
       this.registerForm.markAllAsTouched();
@@ -106,6 +116,9 @@ export class RegisterForm implements OnInit {
 
   }
 
+  /**
+   * Getters
+   */
   get name() { return this.registerForm.get('name'); }
   get email() { return this.registerForm.get('email'); }
   get password() { return this.registerForm.get('password'); }
