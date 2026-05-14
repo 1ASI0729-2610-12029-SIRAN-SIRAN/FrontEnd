@@ -4,6 +4,9 @@ import {AppStore} from '../../../application/iam.store';
 import {Router, RouterLink} from '@angular/router';
 import {NgIf} from '@angular/common';
 
+/**
+ * Provides user interface and logic for account login
+ */
 @Component({
   selector: 'app-login-form',
   imports: [
@@ -23,6 +26,9 @@ export class LoginForm implements OnInit {
               private appStore: AppStore,
               private router: Router){}
 
+  /**
+   * Initializes reactive form with default values and validations rules
+   */
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -30,6 +36,10 @@ export class LoginForm implements OnInit {
     })
   }
 
+  /**
+   * Handles form submission to validate credentials of user
+   * And redirect to home
+   */
   onSubmit(): void {
     if (this.loginForm.invalid){
       console.log(`${this.loginForm.value.email} is invalid`);
@@ -60,6 +70,9 @@ export class LoginForm implements OnInit {
     });
   }
 
+  /**
+   * Getters
+   */
   get email(){
     return this.loginForm.get('email');
   }
