@@ -1,4 +1,4 @@
-// monitoring/domain/model/alert-range.model.ts
+// monitoring/domain/model/alert-range.entity.ts
 
 export interface AlertRange {
   idAlertRange: string;

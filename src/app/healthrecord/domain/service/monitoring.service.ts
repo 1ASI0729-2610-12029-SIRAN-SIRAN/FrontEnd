@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MonitoringApiRepository } from '../../infrastructure/monitoring-api.repository';
-import { HealthRecord, HealthRecordCreateRequest } from '../model/health-record.model';
+import { HealthRecord, HealthRecordCreateRequest } from '../model/health-record.entity';
 
 @Injectable({ providedIn: 'root' })
 export class MonitoringService {

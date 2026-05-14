@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import {MonitoringService} from '../../../domain/service/monitoring.service';
-import {HealthRecordCreateRequest} from '../../../domain/model/health-record.model';
+import {HealthRecordCreateRequest} from '../../../domain/model/health-record.entity';
 
 @Component({
   selector: 'app-health-record-form',

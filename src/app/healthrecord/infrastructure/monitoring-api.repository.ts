@@ -3,7 +3,7 @@
 import {Injectable} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { HealthRecord } from '../domain/model/health-record.model';
+import { HealthRecord } from '../domain/model/health-record.entity';
 
 @Injectable({ providedIn: 'root' })
 export class MonitoringApiRepository {

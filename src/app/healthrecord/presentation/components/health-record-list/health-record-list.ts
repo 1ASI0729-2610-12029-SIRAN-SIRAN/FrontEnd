@@ -2,7 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { MonitoringService } from '../../../domain/service/monitoring.service';
-import { HealthRecord } from '../../../domain/model/health-record.model';
+import { HealthRecord } from '../../../domain/model/health-record.entity';
 
 @Component({
   selector: 'app-health-record-list',
