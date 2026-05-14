@@ -65,6 +65,17 @@
       "specialty": null,
       "createdAt": "",
       "name": "Erick"
+    },
+    {
+      "id": "EOndJkT",
+      "email": "developer@gmail.com",
+      "password": "developer",
+      "role": "MEDIC",
+      "phoneNumber": "999000999",
+      "medicalLicense": "000999",
+      "specialty": "cardiologo",
+      "createdAt": "",
+      "name": "jorge"
     }
   ],
   "subscriptionPlans": [
