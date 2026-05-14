@@ -83,6 +83,21 @@ export class AppStore {
     );
   }
 
+  /**
+   * Update current user profile
+   * @param userData Partial user data to update
+   * @returns Observable of the updated User
+   */
+  updateUser(userData: Partial<User>): Observable<User> {
+    if (!this.currentUserValue) {
+      throw new Error('Current user is missing');
+    }
+    const updatedUser = {...this.currentUserValue, ...userData} as User;
+    return this.authRepository.update(updatedUser).pipe(
+      tap(user=>this.setCurrentUser(user))
+    );
+  }
+
   public get currentUserValue(): User | null {
     return this.currentUserSubject.value;
   }
