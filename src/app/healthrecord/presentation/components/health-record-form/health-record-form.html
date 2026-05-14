@@ -1,14 +1,14 @@
-
-
 <div class="form-container">
 
   <div class="form-header">
-    <a routerLink="/monitoring/records" class="btn-back">
+    <button class="btn-back" (click)="goBack()">
+    <a routerLink="/home" class="btn-back">
       <i class="ti ti-arrow-left"></i> Volver
     </a>
+    </button>
     <div>
       <h2 class="form-title"><i class="ti ti-activity"></i> Nuevo HealthRecord</h2>
-      <p class="form-sub">Registra los signos vitales del neonato</p>
+      <p class="form-sub">Registra los signos vitales esenciales del neonato</p>
     </div>
   </div>
 
@@ -20,7 +20,6 @@
 
     <form (ngSubmit)="onSubmit()" #recordForm="ngForm">
 
-      <!-- Fila 1: Temperatura + Peso -->
       <div class="form-row">
         <div class="form-field">
           <label for="temperature">Temperatura (°C) <span class="required">*</span></label>
@@ -50,7 +49,6 @@
         </div>
       </div>
 
-      <!-- Fila 2: SpO2 + FC -->
       <div class="form-row">
         <div class="form-field">
           <label for="oxygenSaturation">SpO₂ — Saturación O₂ (%) <span class="required">*</span></label>
@@ -65,39 +63,11 @@
             required
           />
         </div>
-        <div class="form-field">
-          <label for="heartRate">Frecuencia cardíaca (lpm)</label>
-          <input
-            id="heartRate"
-            type="number"
-            step="1"
-            min="0" max="300"
-            placeholder="120"
-            [(ngModel)]="form.heartRate"
-            name="heartRate"
-          />
-        </div>
+        <div class="form-field-empty"></div>
       </div>
 
-      <!-- Fila 3: FR -->
-      <div class="form-row">
-        <div class="form-field">
-          <label for="respiratoryRate">Frecuencia respiratoria (rpm)</label>
-          <input
-            id="respiratoryRate"
-            type="number"
-            step="1"
-            min="0" max="100"
-            placeholder="42"
-            [(ngModel)]="form.respiratoryRate"
-            name="respiratoryRate"
-          />
-        </div>
-      </div>
-
-      <!-- Acciones -->
       <div class="form-actions">
-        <a routerLink="/monitoring/records" class="btn-secondary">Cancelar</a>
+        <a routerLink="/home/monitoring" class="btn-secondary">Cancelar</a>
         <button type="submit" class="btn-primary" [disabled]="isSubmitting || recordForm.invalid">
           <i class="ti ti-device-floppy"></i>
           {{ isSubmitting ? 'Guardando...' : 'Guardar registro' }}

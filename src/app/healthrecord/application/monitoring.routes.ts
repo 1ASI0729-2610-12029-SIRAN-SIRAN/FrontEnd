@@ -1,5 +1,3 @@
-// monitoring/monitoring.routes.ts
-// Agregar estas rutas en app.routes.ts dentro del path 'monitoring'
 
 import { Routes } from '@angular/router';
 
