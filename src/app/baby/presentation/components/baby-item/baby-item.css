@@ -1,0 +1,15 @@
+.baby-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+}
+.baby-info {
+  display: flex; gap: 1rem;
+}
+.baby-actions button {
+  margin-left: 0.5rem;
+}

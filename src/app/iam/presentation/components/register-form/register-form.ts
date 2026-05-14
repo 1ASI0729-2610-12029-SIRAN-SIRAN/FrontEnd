@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {Role} from '../../../../shared/domain/model/role.enum';
 import {Router, RouterLink} from '@angular/router';
 import {AppStore} from '../../../application/iam.store';
-import {IamApiRepository} from '../../../infrastructure/iam-api.repository';
+import {IamApi} from '../../../infrastructure/iam-api';
 import {catchError, of, switchMap} from 'rxjs';
 import {CommonModule} from '@angular/common';
 
@@ -28,7 +28,7 @@ export class RegisterForm implements OnInit {
 
   constructor(private fb: FormBuilder,
               private appStore: AppStore,
-              private authRepository: IamApiRepository,
+              private authRepository: IamApi,
               private router: Router) {}
 
   /**

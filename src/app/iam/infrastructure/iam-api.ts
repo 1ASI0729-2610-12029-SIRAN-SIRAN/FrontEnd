@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AuthRepository} from '../domain/service/auth.repository';
+import {AuthRepository} from '../domain/repository/auth.repository';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import {map, Observable, tap} from 'rxjs';
@@ -10,10 +10,10 @@ import {UserAssembler} from './user-assembler';
 /**
  * Implementation of AuthRepository using REST API.
  * This class handles the communication with the backend, but, in this case tp1, with a fake api.
- * This is a service to IAM context, so the name is IamApiRepository
+ * This is a repository to IAM context, so the name is IamApi
  */
 @Injectable({ providedIn: 'root' })
-export class IamApiRepository extends AuthRepository{
+export class IamApi extends AuthRepository{
   private readonly baseUrl = environment.fakeDatabaseProviderApiBaseUrl;
   private readonly userPath = environment.fakeDatabaseProviderUserEndpointPath;
 
